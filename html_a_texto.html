@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Convertidor HTML a Texto</title>
+
+<style>
+body{
+font-family:monospace;
+background:#111;
+color:#00ff88;
+padding:20px;
+}
+
+textarea{
+width:100%;
+height:250px;
+}
+
+pre{
+background:#000;
+padding:20px;
+white-space:pre-wrap;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Convertidor HTML → Texto</h2>
+
+<textarea id="entrada"></textarea>
+
+<br><br>
+
+<button onclick="convertir()">Convertir</button>
+
+<pre id="resultado"></pre>
+
+<script>
+
+function convertir(){
+
+let codigo = document.getElementById("entrada").value;
+
+codigo = codigo
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;");
+
+document.getElementById("resultado").textContent = codigo;
+
+}
+
+</script>
+
+</body>
+</html>
